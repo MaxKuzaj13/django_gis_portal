@@ -14,8 +14,14 @@ class UploadFile(models.Model):
     type = models.CharField(choices=TYPE_GEOMETRY, default='None', max_length=50)
     link_to_file = models.FileField(upload_to='.')
 
+    def __str__(self):
+        return self.file
+
 
 class Report(models.Model):
     # delete rap if delete org file (models.Cascade)
     upload_file = models.ForeignKey(UploadFile, on_delete=models.CASCADE)
     upload_link = models.FileField(upload_to='.')
+
+    def __str__(self):
+        return f"ID: {self.id}"
