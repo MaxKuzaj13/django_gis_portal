@@ -29,5 +29,5 @@ class UploadFileAdmin(admin.ModelAdmin):
 @admin.register(Report)
 class ReportAdmin(admin.ModelAdmin):
     # to change display in admin panel
-    list_display = ['upload_file']
-    list_filter = ['upload_file']
+    list_display = ['upload_file', 'calculate_date']
+    list_filter = ['upload_file', 'calculate_date']

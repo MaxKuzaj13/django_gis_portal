@@ -21,7 +21,8 @@ class UploadFile(models.Model):
 class Report(models.Model):
     # delete rap if delete org file (models.Cascade)
     upload_file = models.ForeignKey(UploadFile, on_delete=models.CASCADE)
-    upload_link = models.FileField(upload_to='.')
+    upload_link = models.FileField(upload_to='.', blank=True, null=True)
+    calculate_date = models.DateField(auto_now=True)
 
     def __str__(self):
         return f"ID: {self.id}"
