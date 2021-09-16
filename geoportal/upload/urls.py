@@ -9,8 +9,9 @@ from django.conf.urls.static import static
 # ]
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
-    path('upload', views.upload, name='upload'),
-
+    # path('upload', views.upload, name='upload'),
+    path('upload', views.UploadView.as_view(), name='upload'),
+    path('list_view', views.ListView.as_view(), name='list_view'),
 ]
 
 if settings.DEBUG:

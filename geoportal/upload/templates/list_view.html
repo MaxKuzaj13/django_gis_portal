@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if upload.count == 0 %}
+    <p>
+        <a>You don't have yet any data</a>
+    </p>
+{% else %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>File Name/th>
+            <th>Layer Name</th>
+            <th>Feature type</th>
+            <th>Link to file</th>
+            <th>Re-upload</th>
+            <th>Detail</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for file in upload%}
+        <tr>
+            <td>{{file.user_name}}</td>
+            <td>{{file.file}}</td>
+            <td>{{file.layer}}</td>
+            <td>{{file.type}}</td>
+            <td>{{file.link_to_file}}</td>
+            <td>
+                <a href="{{''}}" class="btn btn-danger">Detail</a>
+            </td>
+            <td>
+                <a href="{{''}}" class="btn btn-primary">Detail</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        {% endif %}
+
+    </tbody>
+
+</table>
+
+
+{% endblock content %}

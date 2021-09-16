@@ -1,13 +1,20 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <h2>Upload</h2>
 
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="document">
-        <button type="submit">Upload GIS file</button>
+<!--    <form method="post" enctype="multipart/form-data">-->
+<!--        {% csrf_token %}-->
+<!--        <input type="file" name="document">-->
+<!--<button type="submit">Upload GIS file</button>-->
+<!--</form>-->
 
-    </form>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Upload GIS file</button>
+      </form>
+
 
 {% endblock content %}
