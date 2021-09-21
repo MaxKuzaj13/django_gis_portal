@@ -2,14 +2,15 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h2>Login to portal</h2>
+<div class="panel panel-default">
 
-
+    <h2>Login</h2>
       <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|crispy }}
         <button type="submit" class="btn btn-success">Login</button>
       </form>
 
+</div>
 
 {% endblock content %}
