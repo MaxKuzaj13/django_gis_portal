@@ -13,22 +13,11 @@ class UploadForm(forms.ModelForm):
 
         link_to_file = forms.FileField(
             label="Upload a file",
-            help_text="Select the CSV file to upload.",
+            help_text="Select the file to upload.",
             error_messages={
-                "required": "Choose the CSV file you exported from the spreadsheet"
+                "required": "Choose the file you exported"
             },
         )
-
-        def __init__(self, *args, **kwargs):
-            super(UploadForm, self).__init__(*args, **kwargs)
-            self.helper = FormHelper()
-            self.helper.layout = Layout("file", Submit("submit", "Submit"))
-
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.helper = FormHelper()
-    #     self.helper.form_method = 'post'
-    #     self.helper.add_input(Submit('submit', 'Save file'))
 
         # def __init__(self, *args, **kwargs):
         #     super(UploadForm, self).__init__(*args, **kwargs)
