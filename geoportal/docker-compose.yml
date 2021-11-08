@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  djangoapp:
+    # One app
+    tty: true
+    container_name: djangoagis_1
+    restart: always
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    working_dir: /django_gis
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/django_gis
