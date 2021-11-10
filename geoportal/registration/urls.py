@@ -9,7 +9,7 @@ urlpatterns = [
     #
     # path('logout', views.logout, name='logout'),
     path('registration', views.registration, name='registration'),
-    path('', include("django.contrib.auth.urls")),
+    #path('', include("django.contrib.auth.urls")),
 ]
 
 if settings.DEBUG:

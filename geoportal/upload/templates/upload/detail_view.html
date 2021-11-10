@@ -19,28 +19,25 @@
             <th>Feature type</th>
             <th>Link to file</th>
             <th>Re-upload</th>
-            <th>Detail</th>
+            <th>Delete</th>
 
         </tr>
     </thead>
     <tbody>
-        {% for file in upload%}
         <tr>
-            <td>{{file.user_name}}</td>
-            <td>{{file.file}}</td>
-            <td>{{file.layer}}</td>
-            <td>{{file.type}}</td>
-            <td>{{file.link_to_file}}</td>
+            <td>{{detail_view.user_name}}</td>
+            <td>{{detail_view.file}}</td>
+            <td>{{detail_view.layer}}</td>
+            <td>{{detail_view.type}}</td>
+            <td>{{detail_view.link_to_file}}</td>
             <td>
                 <a href="{{''}}" class="btn btn-danger">Re-upload</a>
             </td>
             <td>
-                <a href="{{''}}" class="btn btn-primary">Detail</a>
+                <a href="{{''}}" class="btn btn-primary">Delete</a>
             </td>
         </tr>
-        {% endfor %}
-
-        {% endif %}
+{% endif %}
 
     </tbody>
 

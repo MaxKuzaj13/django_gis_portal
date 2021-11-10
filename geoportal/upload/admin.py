@@ -11,7 +11,7 @@ class ReportInline(admin.TabularInline):
 @admin.register(UploadFile)
 class UploadFileAdmin(admin.ModelAdmin):
     # to change display in admin panel
-    list_display = ['user_name', 'type', 'show_file_location']
+    list_display = ['id', 'user_name', 'type', 'show_file_location']
     list_filter = ['user_name']
     search_fields = ['user_name']
     inlines = [ReportInline]
