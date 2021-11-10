@@ -9,7 +9,7 @@ import pandas as pd
 
 
 @receiver(post_save, sender=UploadFile)
-def post_save_update_fields(sender, instance, **kwargs):
+def post_save_update(sender, instance, **kwargs):
     default_value = sender.objects.get(pk=instance.id)
     if default_value.file == '':
         set_value(default_value)
@@ -50,18 +50,15 @@ def fill_layer_and_file(path):
 
 
 def check_depend_on_extension(extension, file, full_path, layer, path):
-    print(extension)
-    if extension in ['.csv', '.txt']:
-        file = path
-        layer = str(path).replace(extension, '')
-    elif extension in ['.gpkg', 'gdb']:
+    if extension in ['.gpkg', 'gdb']:
         layer = fiona.listlayers(full_path)
         file = path
     elif extension in ['.xls', '.xlsx']:
         file = path
         layer = pd.ExcelFile(path).sheet_names
-
-    print(layer)
+    else:
+        file = path
+        layer = str(path).replace(extension, '')
     return file, layer
 
 
