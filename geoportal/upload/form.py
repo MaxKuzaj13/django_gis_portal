@@ -7,7 +7,7 @@ from .models import UploadFile
 class UploadForm(forms.ModelForm):
     class Meta:
         model = UploadFile
-        fields = ('file', 'layer', 'type', 'link_to_file')
+        fields = ('type', 'link_to_file')
         # labels = {'my label'}
         # help_texts = {'test help'}
 

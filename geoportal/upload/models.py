@@ -15,6 +15,8 @@ class UploadFile(models.Model):
     link_to_file = models.FileField(upload_to='.')
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+    format_of_file = models.CharField(max_length=10)
+    uuid = models.CharField(max_length=100)
 
     def __str__(self):
         return self.file
