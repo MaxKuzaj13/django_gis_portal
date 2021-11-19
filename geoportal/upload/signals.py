@@ -43,13 +43,14 @@ def save_value_field_and_layer(default_value, layer):
 
 
 def fill_layer_and_file(path):
-    layer = file = 'Error with loading file'
+
     extension, full_path = find_extension(MEDIA_URL + str(path))
-    file, layer = check_depend_on_extension(extension, file, full_path, layer, path)
+    file, layer = check_depend_on_extension(extension, full_path, path)
     return layer, file
 
 
-def check_depend_on_extension(extension, file, full_path, layer, path):
+def check_depend_on_extension(extension, full_path, path):
+    layer = file = 'Error with loading file'
     if extension in ['.gpkg', 'gdb']:
         layer = fiona.listlayers(full_path)
         file = path

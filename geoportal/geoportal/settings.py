@@ -37,15 +37,18 @@ ALLOWED_HOSTS =  ['localhost', '127.0.0.1', '0.0.0.0']
 # Application definition
 
 INSTALLED_APPS = [
-    'upload.apps.UploadConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'import_export',
     'crispy_forms',
     'upload.apps',
+
+    'upload.apps.UploadConfig',
 ]
 
 MIDDLEWARE = [
